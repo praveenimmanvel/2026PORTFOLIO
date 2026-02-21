@@ -1,91 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praveen Immanvel C | System Administrator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen C Immanvel | System Administrator</title>
+  <style>
+
+    /* GOLDEN BLACK THEME */
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a0a);
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: linear-gradient(135deg, #000000, #111111);
+      padding: 40px;
+      text-align: center;
+      border-bottom: 1px solid #d4af37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .profile-container {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #d4af37;
+      box-shadow: 0 0 25px rgba(212,175,55,0.6);
+      background: linear-gradient(135deg, #000, #1a1a1a);
+      padding: 5px;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(212,175,55,0.9);
+      transition: 0.4s;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      color: #d4af37;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 8px 0;
+      color: #cccccc;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 25px;
+      background: linear-gradient(135deg, #050505, #0f0f0f);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: 0.3s;
+    }
+
+    section:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      transform: translateY(-4px);
+    }
+
+    h2 {
+      color: #d4af37;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 5px;
+    }
+
+    h3 {
+      color: #ffd700;
+      margin-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #111111;
+      padding: 8px 14px;
+      margin: 6px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: #d4af37;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #000000, #111111);
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat h3 {
+      margin: 0;
+      color: #ffd700;
+      font-size: 28px;
+    }
+
+    .highlight {
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      color: #cccccc;
+      background: #000000;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #d4af37, #ffd700);
+      color: black;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    }
+
+  
+
+    /* TECH STACK LOGOS */
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .tech-item {
+      background: #0a0a0a;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(212,175,55,0.3);
+      transition: 0.3s;
+    }
+
+    .tech-item:hover {
+      border-color: #d4af37;
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(212,175,55,0.4);
+    }
+
+    .tech-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    /* ARCHITECTURE IMAGE */
+    .architecture {
+      text-align: center;
+    }
+
+    .architecture img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      border: 1px solid rgba(212,175,55,0.4);
+      margin-top: 15px;
+    }
+
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body>
 
-    <header class="h-screen flex flex-col justify-center items-center text-center p-6 bg-slate-900">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
-            Praveen Immanvel C
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mt-4">
-            System Administrator with strong hands-on experience in Linux and Windows administration, user management, and end-to-end troubleshooting.
-        </p>
-        <div class="mt-8 flex gap-6">
-            <a href="https://www.linkedin.com/in/praveen-c-immanvel-7a417523" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com/praveenimmanvel" class="hover:text-slate-400 transition text-2xl"><i class="fab fa-github"></i></a>
-            <a href="mailto:praveenimmanvelc@gmail.com" class="text-3xl hover:text-red-500 transition"><i class="fas fa-envelope"></i></a>
-        </div>
-    </header>
+<header>
+  <img src="profile.png" alt="Praveen Profile" class="profile-img">
 
-    <section class="max-w-5xl mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold mb-12 border-l-4 border-blue-500 pl-4">Professional Experience</h2>
-        <div class="bg-slate-800 p-8 rounded-xl shadow-xl">
-            <div class="flex flex-col md:flex-row justify-between mb-6">
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-300">Intellect Design Arena</h3>
-                    <p class="text-lg text-emerald-400">System Administrator | Infrastructure & Operations.</p>
-                </div>
-                <div class="text-slate-400 text-right">
-                    <p>Nov 2023 – Present </p>
-                    <p>Chennai & Pune </p>
-                </div>
-            </div>
-            <ul class="space-y-3 text-slate-300">
-                <li class="flex gap-2"><span>•</span> Solely responsible for IT support and operations for a branch of 240+ employees.</li>
-                <li class="flex gap-2"><span>•</span> Single point of contact (SPOC) for systems, hardware, networking, and user support.</li>
-                <li class="flex gap-2"><span>•</span> Administered Linux (Ubuntu) and Windows Server 2016/2019 environments.</li>
-                <li class="flex gap-2"><span>•</span> Managed Linux users, groups, UID/GID assignments, and sudo access.</li>
-                <li class="flex gap-2"><span>•</span> Handled hardware troubleshooting for desktops, laptops, and printers.</li>
-                <li class="flex gap-2"><span>•</span> Monitored performance and resolved service failures using systemctl and Task Manager.</li>
-                <li class="flex gap-2"><span>•</span> Supported DNS, DHCP, TCP/IP, and basic firewall troubleshooting.</li>
-            </ul>
-        </div>
-    </section>
+  <div class="profile-container">
+    <h1>Praveen C Immanvel</h1>
+    <p>System Administrator |LINUX|WINDOWS|MAC|HY-BRID TECNOLOGY |Infrastructure Engineer|       </p>
+    <p>
+      📧 praveenimmanvelc@gmail.com |
+      📱 +91 7708936284 |
+      📍 CHENNAI, India.
+    </p>
+    <p>
+      <a href="https://github.com/praveenimmanvel" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/praveen-c-immanvel-7a417523b" target="_blank">LinkedIn</a>
+    </p>
+    <a class="button" href="https://github.com/praveenimmanvel" target="_blank">Explore My Work</a>
+  </div>
+</header>
 
-    <section class="bg-slate-800 py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 border-l-4 border-emerald-500 pl-4">Education</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-emerald-400">Rathinam College of Arts and Science </h3>
-                    <p class="font-semibold">Bachelor of Computer Application </p>
-                    <p class="text-slate-400">Major in Computer Application, Minor in Cybersecurity </p>
-                    <p class="text-sm text-slate-500 mt-2">CBE | May 2020-23 </p>
-                </div>
-                <div class="bg-slate-900 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-emerald-400">St. Joseph’s Higher Secondary School </h3>
-                    <p class="font-semibold">Computer Application with Science </p>
-                    <p class="text-slate-400">Ooty [cite: 48]</p>
-                    <p class="text-sm text-slate-500 mt-2">May 2018-20 </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container">
 
-    <section class="max-w-5xl mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold mb-12 text-center">Core Competencies</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+<section>
+  <h2>Professional Summary</h2>
+  <p>
+    Results-driven <span class="highlight">System Administrator & Ops Engineer</span>  with over 2+ years of experience managing enterprise Linux, Windows Server, and cloud infrastructure (AWS & Azure). Skilled in automation, infrastructure monitoring, Active Directory, and system security, ensuring high availability and performance across hybrid environments.
 
-            <div class="p-4 border border-slate-700 rounded-lg">Linux & Windows Admin </div>
+Experienced in building CI/CD pipelines using Jenkins and Docker, and automating tasks with Bash and PowerShell to improve operational efficiency. Proven ability to optimize systems, strengthen security, and implement scalable, reliable infrastructure solutions.
+  </p>
 
-            <div class="p-4 border border-slate-700 rounded-lg">AWS Fundamentals </div>
+  <div class="stats">
+    <div class="stat">
+      <h3>2+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h3>50+</h3>
+      <p>Servers Managed</p>
+    </div>
+    <div class="stat">
+      <h3>100+</h3>
+      <p>Incidents Resolved</p>
+    </div>
+    <div class="stat">
+      <h3>20+</h3>
+      <p>Automation Scripts</p>
+    </div>
+  </div>
+</section>
 
-            <div class="p-4 border border-slate-700 rounded-lg">Docker & Kubernetes </div>
+<section>
+  <h2>Core Competencies</h2>
+  <div class="skills">
+    <span>Linux Administration</span>
+    <span>AWS Cloud</span>
+    <span>Azure Cloud</span>
+    <span>Kubernetes</span>
+    <span>Docker</span>
+    <span>Jenkins CI/CD</span>
+    <span>Infrastructure Automation</span>
+    <span>Python Automation</span>
+    <span>Bash Scripting</span>
+    <span>PowerShell</span>
+    <span>Active Directory</span>
+    <span>Monitoring & Alerting</span>
+    <span>CloudWatch</span>
+    <span>PRTG Monitoring</span>
+    <span>Security & Hardening</span>
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="card">
+    <h3>SYSTEM ADMINISTRATOR</h3>
+    <p><span class="highlight">Intellect Design Arena Ltd</span>                                               |CHN-PUNE|Oct 2024 – FEB 2026|</p>
+    <ul class="experience-list"
+<ul class="experience-list">
+<ul class="experience-list">
+<ul class="experience-section">
+
+  <style>
+  .section-title {
+    font-size: 20px;          /* increased title size */
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-content {
+    font-size: 16.5px;        /* increased content size */
+    line-height: 1.6;
+    margin-left: 34px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .section-icon {
+    width: 26px;              /* slightly bigger icon */
+    height: 26px;
+  }
+
+  .highlight {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0a66c2;
+  }
+
+  .card h3 {
+    font-size: 19px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+</style>
+
+<div class="card">
+  <h3>SYSTEM ADMINISTRATOR</h3>
+  <p>
+    <span class="highlight">Intellect Design Arena Ltd</span> | CHN-PUNE | Oct 2024 – Feb 2026
+  </p>
+
+  <ul class="experience-section">
+
+    <li class="section-title">
+      <img src="https://img.icons8.com/color/48/server.png" class="section-icon">
+      <span class="highlight">🛡️ INFRASTRUCTURE MONITORING & INCIDENT MANAGEMENT</span>
+    </li>
+
+    <li class="section-content">
+      Performed 24/7 monitoring of enterprise networks, Windows and Linux servers, and cloud infrastructure using PRTG, CA Spectrum, Sapphire Agent, and SIEM tools.
+    </li>
+
+    <li class="section-content">
+      Detected, analyzed, and responded to security incidents and system alerts, coordinating with internal teams and ISPs for rapid resolution.
+    </li>
 
 
-            <div class="p-4 border border-slate-700 rounded-lg">Bash Scripting </div>
+    <li class="section-title">
+      <img src="https://img.icons8.com/color/48/combo-chart.png" class="section-icon">
+      <span class="highlight">📊 SYSTEM PERFORMANCE & REPORTING</span>
+    </li>
 
-            <div class="p-4 border border-slate-700 rounded-lg">Active Directory </div>
+    <li class="section-content">
+      Monitored CPU, memory, disk, and network performance using SNMP, WMI, SSH, and RDP to ensure uptime and reliability.
+    </li>
 
-            <div class="p-4 border border-slate-700 rounded-lg">ITIL Processes </div>
-        </div>
-    </section>
+    <li class="section-content">
+      Generated infrastructure health, patch compliance, antivirus, and cloud monitoring reports for AWS and Azure environments.
+    </li>
+
+
+    <li class="section-title">
+      <img src="https://img.icons8.com/color/48/system-task.png" class="section-icon">
+      <span class="highlight">🖥️ SYSTEM ADMINISTRATION & SERVICE MANAGEMENT</span>
+    </li>
+
+    <li class="section-content">
+      Managed and maintained critical services including Active Directory, DNS, DHCP, backups, and identity access systems.
+    </li>
+
+    <li class="section-content">
+      Performed patch management, vulnerability remediation, and system hardening to ensure security and stability.
+    </li>
+
+
+    <li class="section-title">
+      <img src="https://img.icons8.com/color/48/network.png" class="section-icon">
+      <span class="highlight">🌐 INCIDENT RESOLUTION & RELIABILITY</span>
+    </li>
+
+    <li class="section-content">
+      Troubleshot infrastructure, network, and application issues to minimize downtime and maintain service availability.
+    </li>
+
+    <li class="section-content">
+      Collaborated with network, security, and application teams to ensure optimal infrastructure performance.
+    </li>
+
+    <li class="section-title">
+    <span class="highlight">⚙️ TOOLS & TECHNOLOGIES</span>
+    </li>
+ 
+    <li class="section-content">
+    PRTG, SIEM, CA Spectrum, AWS, Azure, Windows Server, Linux, SNMP, WMI, SSH, RDP, Active Directory.
+    </li>
+
+   </ul>
+
+<section>
+  <h2 style="font-size:24px;">System Administration Projects</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>CI/CD Pipeline</h3>
+      <p>Automated application deployment pipeline using Jenkins, Docker, and Git.</p>
+    </div>
+
+    <div class="card">
+      <h3>Kubernetes Deployment</h3>
+      <p>Deployed containerized applications and managed Kubernetes clusters.</p>
+    </div>
+
+    <div class="card">
+      <h3>Infrastructure Automation</h3>
+      <p>Created automation scripts for system provisioning and monitoring.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cloud Monitoring System</h3>
+      <p>Implemented monitoring and alerting using AWS CloudWatch.</p>
+    </div>
+
+  </div>
+</section>
+  </div>
+
+</section>
+
+<section>
+  <h2>Tools & Technologies</h2>
+
+  <div class="tech-stack">
+
+    <div class="tech-item">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+  <div>Linux</div>
+  </div>
+  <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg">
+      <div>AWS</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg">
+      <div>Azure</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+      <div>Docker</div>
+    </div>
+
+    <div class="tech-item">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg">
+  <div>Networking</div>
+</div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">
+      <div>Kubernetes</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg">
+      <div>Jenkins</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      <div>GitHub Actions</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+      <div>Linux</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg">
+      <div>Windows Server</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg">
+      <div>Bash</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+      <div>Python</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg">
+      <div>PowerShell</div>
+    </div>
+
+    <div class="tech-item">
+      <img src="https://img.icons8.com/color/96/server.png">
+      <div>Monitoring (PRTG / SIEM / CloudWatch)</div>
+    </div>
+
+  </div>
+</section>
+<section>
+  <h2>Certifications</h2>
+
+  <div class="tech-stack">
+
+    <!-- Cisco -->
+    <div class="tech-item">
+      <img src="https://img.icons8.com/color/96/networking-manager.png" alt="Cisco">
+      <div>Cisco Networking Academy<br>Introduction to Cybersecurity</div>
+    </div>
+
+    <!-- Azure -->
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+      <div>Microsoft Certified (2023)<br>Azure Data Fundamentals</div>
+    </div>
+
+    <!-- Ethical Hacking -->
+    <div class="tech-item">
+      <img src="https://img.icons8.com/color/96/cyber-security.png" alt="Security">
+      <div>Ethical Hacking Essentials<br>(EHE – Level 1)</div>
+    </div>
+
+    <div class="tech-item">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+  <div>IBM<br>Penetration Testing, Threat Hunting, Cryptography</div>
+</div>
+    <!-- Full Stack -->
+    <div class="tech-item">
+      <img src="https://img.icons8.com/color/96/source-code.png" alt="Development">
+      <div>Full Stack Development<br>Novi Tech Ltd</div>
+    </div>
+
+    <!-- Linux -->
+    <div class="tech-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+      <div>Linux Foundation<br>(Ongoing)</div>
+    </div>
+
+  </div>
+</section>
+<section>
+  <h2>Education</h2>
+  <p><strong>BACHELORS IN COMPUTERSCINCE</strong></p>
+  <p>RATHINAM COLLEGE OF ARTS AND SCIENCE  |CBE - 2023| </p>
+  <p><strong>MATHAMETICS WITH SCIENCE</strong></p>
+  <p>ST. JOSEPH'S HR SEC SCHOOL</S>  |OOTY - 2020|</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: praveenimmanvelc@gmail.com</p>
+  <p>Phone: +91 7708936284</p>
+  <p>Location: Chennai, India</p>
+</section>
+
+</div>
+
+<footer>
+  © 2026 Praveen C Immanvel | System Administrator | Golden Black Portfolio
+</footer>
 
 </body>
 </html>
